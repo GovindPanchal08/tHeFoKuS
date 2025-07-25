@@ -5,6 +5,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Video = () => {
+  const isMobile = window.innerWidth < 768;
+
   const containerRef = useRef(null);
   const videoRefs = useRef([]);
 
@@ -39,22 +41,28 @@ const Video = () => {
       });
     }, containerRef);
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+    };
   }, []);
 
   return (
-    <section className="w-full lg:min-h-screen relative bg-black px-4 lg:px-[5rem] py-8 lg:py-10 -z-10 flex  lg:items-center">
+    <section className="w-full lg:min-h-screen relative bg-black px-4 py-10 lg:px-[5rem] lg:py-10 -z-10">
       <div
-        data-scroll
-        data-scroll-section
-        data-scroll-speed="-.3"
+        {...(!isMobile && {
+          "data-scroll": true,
+          "data-scroll-section": true,
+          "data-scroll-speed": "-0.3",
+        })}
         ref={containerRef}
-        className="w-full flex flex-row"
+        className="w-full h-full flex"
       >
         {videoSources.map((src, index) => (
           <div
             key={index}
-            className={`video-item  w-full sm:w-[70%] lg:w-[19vw] aspect-auto overflow-hidden
+            className={`video-item
+          w-[80%] sm:w-[40%] md:w-[30%] lg:w-[19vw]
+          aspect-auto overflow-hidden
           ${index === 0 ? "rounded-l-2xl" : ""}
           ${index === videoSources.length - 1 ? "rounded-r-2xl" : ""}
           ${index > 2 ? "hidden lg:block" : ""}

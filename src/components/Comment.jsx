@@ -42,7 +42,11 @@ const Comment = () => {
     };
   }, []);
   return (
-    <section className="w-full font-['Inter'] bg-[#F5F5DC] py-16 px-4 md:px-8 lg:px-20">
+    <section
+      data-scroll
+      data-sroll-section
+      className="w-full font-['Inter'] bg-[#F5F5DC] py-16 px-4 md:px-8 lg:px-20"
+    >
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="head text-[13vw] md:text-[6vw] lg:text-[8vw] xl:text-[8vw] font-extrabold text-black tracking-tight leading-tight lg:leading-[7rem] mb-10">
           WHAT YOUR FAVOURITES SAY

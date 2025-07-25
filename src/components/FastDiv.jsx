@@ -28,7 +28,7 @@ const FastDiv = () => {
       data-scroll
       data-scroll-section
       data-scroll-speed=".1"
-      data-scroll-offset="100%, -170%"
+      data-scroll-offset="0%, -1000%"
       data-scroll-position="top"
       className="font-['Inter'] w-full bg-white text-black flex flex-col rounded-t-xl overflow-hidden"
     >

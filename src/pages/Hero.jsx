@@ -221,7 +221,7 @@ const Hero = () => {
       data-scroll
       data-scroll-section
       data-scroll-speed="-.4"
-      className="w-full h-screen overflow-hidden"
+      className="w-full min-h-screen overflow-hidden"
       style={{ background: products[currentIndex].gradient }}
       ref={containerRef}
     >
@@ -258,7 +258,7 @@ const Hero = () => {
             Explore Products
           </button>
 
-          <div className="mt-4 lg:mt-6  absolute bottom-6 left-10 ">
+          <div className=" lg:mt-6  absolute bottom-6 left-10 ">
             <h3 className="font-medium flex flex-col lg:flex-row items-center justify-center ">
               <span
                 style={{ color: products[currentIndex].color }}

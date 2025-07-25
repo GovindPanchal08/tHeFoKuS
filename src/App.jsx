@@ -12,12 +12,18 @@ const App = () => {
     const scroll = new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"),
       smooth: true,
-      multiplier: 1,
-      class: "is-reveal",
+      smartphone: {
+        smooth: true,
+      },
+      tablet: {
+        smooth: true,
+      },
     });
 
     return () => {
-      if (scroll) scroll.destroy();
+      if (scroll) {
+        scroll.destroy();
+      }
     };
   }, []);
 
